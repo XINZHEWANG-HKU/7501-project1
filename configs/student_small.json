@@ -1,0 +1,17 @@
+{
+  "vocab": 2048,
+  "width": 128,
+  "heads": 4,
+  "depth": 4,
+  "context": 256,
+  "student_width": 128,
+  "student_heads": 4,
+  "student_depth": 4,
+  "use_cache": true,
+  "use_rope": true,
+  "norm": "rmsnorm",
+  "qk_norm": true,
+  "ffn": "swiglu",
+  "scaled_residual_init": true,
+  "cache_temperature": 0.2
+}
