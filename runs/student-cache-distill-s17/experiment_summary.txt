@@ -1,0 +1,179 @@
+{
+  "created_at_utc": "2026-09-24T10:50:05.793132+00:00",
+  "command": "train.py --implementation student --config configs\\student_long_cache.json --device cuda --precision fp32 --seed 17 --steps 19200 --batch-size 32 --eval-every 800 --save-steps 18400,19200 --teacher-checkpoint runs\\student-long-s17\\checkpoint.pt --distill-alpha 0.5 --distill-temperature 1.0 --run-dir runs\\student-cache-distill-s17",
+  "run_dir": "runs\\student-cache-distill-s17",
+  "implementation": "student",
+  "seed": 17,
+  "steps": 19200,
+  "batch_size": 32,
+  "train_tokens": 157286400,
+  "parameters": 6565826,
+  "precision": "fp32",
+  "threads": 4,
+  "preparation_seconds": 14.551239299999907,
+  "train_seconds": 5104.324608900001,
+  "process_seconds": 5192.9064115,
+  "validation": {
+    "bpb": 1.4440573272676338,
+    "token_ppl": 21.141380330144262,
+    "nll_nats": 1149091.0227867938,
+    "targets": 376599,
+    "utf8_bytes": 1148007,
+    "seconds": 3.060989399999926
+  },
+  "final_validation": {
+    "bpb": 1.4440573272676338,
+    "token_ppl": 21.141380330144262,
+    "nll_nats": 1149091.0227867938,
+    "targets": 376599,
+    "utf8_bytes": 1148007,
+    "seconds": 3.060989399999926
+  },
+  "selected_step": 19200,
+  "training_config": {
+    "steps": 19200,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "warmup_steps": 100,
+    "requested_warmup_steps": 100,
+    "min_lr_ratio": 0.1,
+    "weight_decay": 0.1,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "grad_clip": 1.0,
+    "distillation": true,
+    "distill_alpha": 0.5,
+    "distill_temperature": 1.0,
+    "teacher": {
+      "checkpoint": "runs\\student-long-s17\\checkpoint.pt",
+      "checkpoint_sha256": "413312764929069f79242474c2cc0012cbab2afe190246df0b71a2d1d507e313",
+      "implementation": "student",
+      "implementation_sha256": "68a9fdb1c678ec5ad0306b02115b8accb15fd0577f4dad9ad527d65cf77acec1",
+      "config": {
+        "vocab": 2048,
+        "width": 128,
+        "heads": 4,
+        "depth": 4,
+        "context": 256,
+        "student_width": 288,
+        "student_heads": 6,
+        "student_depth": 6,
+        "ffn_width": 768,
+        "use_cache": false,
+        "retain_cache_parameters": false,
+        "use_rope": true,
+        "norm": "rmsnorm",
+        "qk_norm": false,
+        "ffn": "swiglu",
+        "scaled_residual_init": true,
+        "residual_dropout": 0.2
+      },
+      "seed": 17,
+      "train_tokens": 157286400,
+      "selected_step": 18400,
+      "training_config": {
+        "steps": 19200,
+        "batch_size": 32,
+        "learning_rate": 0.001,
+        "warmup_steps": 100,
+        "requested_warmup_steps": 100,
+        "min_lr_ratio": 0.1,
+        "weight_decay": 0.1,
+        "betas": [
+          0.9,
+          0.95
+        ],
+        "grad_clip": 1.0,
+        "eval_every": 800,
+        "select_best": true,
+        "save_steps": [
+          17760,
+          18240,
+          18720,
+          19200
+        ]
+      },
+      "parent_teacher": null
+    },
+    "eval_every": 800,
+    "select_best": true,
+    "save_steps": [
+      18400,
+      19200
+    ]
+  },
+  "teacher": {
+    "checkpoint": "runs\\student-long-s17\\checkpoint.pt",
+    "checkpoint_sha256": "413312764929069f79242474c2cc0012cbab2afe190246df0b71a2d1d507e313",
+    "implementation": "student",
+    "implementation_sha256": "68a9fdb1c678ec5ad0306b02115b8accb15fd0577f4dad9ad527d65cf77acec1",
+    "config": {
+      "vocab": 2048,
+      "width": 128,
+      "heads": 4,
+      "depth": 4,
+      "context": 256,
+      "student_width": 288,
+      "student_heads": 6,
+      "student_depth": 6,
+      "ffn_width": 768,
+      "use_cache": false,
+      "retain_cache_parameters": false,
+      "use_rope": true,
+      "norm": "rmsnorm",
+      "qk_norm": false,
+      "ffn": "swiglu",
+      "scaled_residual_init": true,
+      "residual_dropout": 0.2
+    },
+    "seed": 17,
+    "train_tokens": 157286400,
+    "selected_step": 18400,
+    "training_config": {
+      "steps": 19200,
+      "batch_size": 32,
+      "learning_rate": 0.001,
+      "warmup_steps": 100,
+      "requested_warmup_steps": 100,
+      "min_lr_ratio": 0.1,
+      "weight_decay": 0.1,
+      "betas": [
+        0.9,
+        0.95
+      ],
+      "grad_clip": 1.0,
+      "eval_every": 800,
+      "select_best": true,
+      "save_steps": [
+        17760,
+        18240,
+        18720,
+        19200
+      ]
+    },
+    "parent_teacher": null
+  },
+  "config": {
+    "vocab": 2048,
+    "width": 128,
+    "heads": 4,
+    "depth": 4,
+    "context": 256,
+    "student_width": 288,
+    "student_heads": 6,
+    "student_depth": 6,
+    "ffn_width": 768,
+    "use_cache": true,
+    "retain_cache_parameters": false,
+    "use_rope": true,
+    "norm": "rmsnorm",
+    "qk_norm": false,
+    "ffn": "swiglu",
+    "scaled_residual_init": true,
+    "residual_dropout": 0.2
+  },
+  "checkpoint_sha256": "9e7ae095e6a3da3589cf3e6857b058e08d7bac00a7022d9e82d50bb00e38a44c",
+  "implementation_sha256": "68a9fdb1c678ec5ad0306b02115b8accb15fd0577f4dad9ad527d65cf77acec1"
+}
